@@ -69,5 +69,5 @@ class Customer:
         if self.backpack.purchased_cans.length > 0:
             self.user_interface.output_text("You have no cans in your backpack")
         else:
-            for can in backpack.purchased_cans:
+            for can in self.backpack.purchased_cans:
                 self.user_interface.output_text(can.name)
