@@ -1,4 +1,4 @@
-from coins import Coin
+import coins
 from cans import Can
 from user_interface import User_interface
 
@@ -12,13 +12,13 @@ class SodaMachine:
     def fill_register(self):
         """Method will fill SodaMachine's register with certain amounts of each coin when called."""
         for index in range(8):
-            self.register.append(Coin.Quarter())
+            self.register.append(coins.Quarter())
         for index in range(10):
-            self.register.append(Coin.Dime())
+            self.register.append(coins.Dime())
         for index in range(20):
-            self.register.append(Coin.Nickel())
+            self.register.append(coins.Nickel())
         for index in range(50):
-            self.register.append(Coin.Penny())
+            self.register.append(coins.Penny())
 
     def fill_inventory(self):
         """Method will fill SodaMachine's cans list with certain amounts of each can when called."""
