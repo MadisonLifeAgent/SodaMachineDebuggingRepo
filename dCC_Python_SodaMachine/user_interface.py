@@ -43,7 +43,7 @@ class User_interface:
         """Initial method asking user if they'll make a purchase. No errors."""
         print("\nWelcome to the soda machine.  We only take coins as payment. \n")
         user_response = continue_prompt("Would you like to make a purchase? (y/n):")
-        if user_response:
+        if user_response == "y":
             return True
         else:
             print("Please step aside to allow another customer to make a selection")
