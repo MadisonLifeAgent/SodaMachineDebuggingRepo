@@ -45,7 +45,7 @@ class User_interface:
         """Initial method asking user if they'll make a purchase. No errors."""
         print("\nWelcome to the soda machine.  We only take coins as payment. \n")
         user_response = self.continue_prompt("Would you like to make a purchase? (y/n):")
-        if user_response == "y":
+        if user_response[0] == "y" or user_response[0] == "yes":
             return True
         else:
             print("Please step aside to allow another customer to make a selection")
@@ -64,12 +64,14 @@ class User_interface:
 
     def continue_prompt(self, text):
         """Validates a 'y' or 'yes' string and returns a True value. No errors."""
-        switcher = {
-            "y": True,
-            "yes": True
-        }
+        #user input moved in front of validation
         user_input = input(text).lower()
-        return switcher.get(user_input, False)
+
+        switcher = {
+            "y": ("y", True),
+            "yes": ("yes", True),
+        }
+        return switcher.get(text, (user_input, False))
 
 
     def soda_selection(self, inventory):
