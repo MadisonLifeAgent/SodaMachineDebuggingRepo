@@ -1,3 +1,7 @@
+# import classes for use
+from wallet import Wallet
+from backpack import Backpack
+from user_interface import User_interface
 
 
 class Customer:
@@ -7,8 +11,13 @@ class Customer:
 
     def gather_coins_from_wallet(self, selected_soda):
         """Method allowing user to choose coins from wallet for payment"""
+
+        #create instances for use
+        user_interface = User_interface()
+
         will_proceed = False
         customer_payment = []
+
         user_interface.output_text("Continue to add coins until you are ready to insert them into the machine")
         while will_proceed:
             user_interface.display_can_cost(selected_soda)
@@ -33,7 +42,7 @@ class Customer:
 
     def add_coins_to_wallet(self, coins_list):
         """Method responsible for adding coins from a list into wallet's money list"""
-        for coin in coin_list:
+        for coin in coins_list:
             self.wallet.money.append(coins_list)
 
     def add_can_to_backpack(self, dispensed_can):
