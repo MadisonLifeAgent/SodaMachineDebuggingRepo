@@ -1,8 +1,8 @@
-
+from user_interface import User_interface
 
 class Simulation:
     def __init__(self):
-        pass
+        self.user_option = ()
 
     def run_simulation(self):
         """The central method called in main.py."""
