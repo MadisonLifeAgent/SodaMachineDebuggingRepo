@@ -6,9 +6,9 @@ class Simulation:
 
     def run_simulation(self):
         """The central method called in main.py."""
-        customer = Customer()
-        soda_machine = SodaMachine()
-        will_proceed = False
+        #customer = Customer()
+        #soda_machine = SodaMachine()
+        #will_proceed = False
         while will_proceed:
             user_option = user_interface.simulation_main_menu()
             if user_option == "1":
