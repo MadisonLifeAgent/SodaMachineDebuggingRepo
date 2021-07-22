@@ -76,16 +76,16 @@ def soda_selection(inventory):
 
     #fill inventory and register so user can purchase soda and receive change
     inventory = SodaMachine()
-    inventory.fill_inventory(inventory)
+    inventory.fill_inventory()
 
     validated_user_selection = (False, None)
 
-    soda_options = get_unique_can_names(inventory)
+    #soda_options = get_unique_can_names(inventory)
     while validated_user_selection[0] == False:
         print("Please choose from the following options:")
         i = 1
-        for can in soda_options:
-            print(f"\n\tEnter -{i}- for {can.name} : ${can.price}")
+        for x in inventory.inventory.name:
+            print(f"\n\tEnter -{i}- for {x.name} : ${x.price}")
             i += 1
         
         user_selection = try_parse_int(input("Selection:  "))
@@ -114,13 +114,12 @@ def try_parse_int(value):
 def get_unique_can_names(inventory):
     """Loops through inventory to create a list of all distinct types of sodas available. No errors."""
     unique_cans = []
-    previous_names = []
-    for can in inventory:
-        if can.name in previous_names:
-            continue
+
+    for can in inventory.inventory:
+        if can in unique_cans:
+            break
         else:
             unique_cans.append(can)
-            previous_names.append(can.name)
     return unique_cans
 
 
