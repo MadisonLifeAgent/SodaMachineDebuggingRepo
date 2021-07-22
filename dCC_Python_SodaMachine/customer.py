@@ -15,7 +15,8 @@ class Customer:
         customer_payment = []
 
         user_interface.output_text("Continue to add coins until you are ready to insert them into the machine")
-        while will_proceed:
+        
+        while will_proceed == False:
             user_interface.display_can_cost(selected_soda)
             user_interface.display_payment_value(customer_payment)
             coin_name = user_interface.coin_selection()

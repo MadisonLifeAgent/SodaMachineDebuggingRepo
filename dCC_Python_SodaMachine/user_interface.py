@@ -51,8 +51,7 @@ def display_welcome():
 
 def output_text(text):# needs variable here to store
     """User input method that will print to console any string passed in as an argument"""
-    print("text")
-
+    print(text)
 
 def clear_console():
     """Used for clearing out the console. No errors."""
@@ -113,7 +112,7 @@ def get_unique_can_names(inventory):
 
     for can in inventory:
         if can.name in previous_names:
-            break
+            continue
         else:
             unique_cans.append(can)
             previous_names.append(can.name)
@@ -122,7 +121,7 @@ def get_unique_can_names(inventory):
 
 def display_can_cost(selected_can):
     """Displays the name of a can and its price"""
-    print(f'The price of a {selected_can.price} is ${selected_can.price}')
+    print(f'The price of a {selected_can.name} is ${selected_can.price}')
 
 
 def display_payment_value(customer_payment):
