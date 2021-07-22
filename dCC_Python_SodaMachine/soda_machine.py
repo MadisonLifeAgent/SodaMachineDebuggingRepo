@@ -1,6 +1,7 @@
 import coins
-from cans import Can
+import cans
 import user_interface
+import random
 
 class SodaMachine:
     def __init__(self):
@@ -18,14 +19,23 @@ class SodaMachine:
         for index in range(50):
             self.register.append(coins.Penny())
 
-    def fill_inventory(self):
+    def fill_inventory(self, inventory):
         """Method will fill SodaMachine's cans list with certain amounts of each can when called."""
-        for index in range(10):
-            self.inventory.append(Can.Cola())
-        for index in range(10):
-            self.inventory.append(Can.OrangeSoda())
-        for index in range(10):
-            self.inventory.append(Can.RootBeer())
+        if self.inventory == []:
+        #for index in range(10):
+            cans.Cola.quantity = random.randrange(10)
+            self.inventory.append(cans.Cola)
+            print(cans.Cola.quantity)
+        #for index in range(10):
+            cans.OrangeSoda.quantity = random.randrange(10)
+            self.inventory.append(cans.OrangeSoda)
+            print(cans.OrangeSoda.quantity)
+
+        #for index in range(10):
+            self.inventory.append(cans.RootBeer(random.randrange(10)))
+            print(cans.RootBeer)
+
+            return self.inventory
 
     def begin_transaction(self, customer):
         """Method is complete. Initiates purchase if user decides to proceed. No errors."""

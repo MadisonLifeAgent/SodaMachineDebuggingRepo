@@ -76,7 +76,7 @@ def soda_selection(inventory):
 
     #fill inventory and register so user can purchase soda and receive change
     inventory = SodaMachine()
-    inventory.fill_inventory()
+    inventory.fill_inventory(inventory)
 
     validated_user_selection = (False, None)
 
