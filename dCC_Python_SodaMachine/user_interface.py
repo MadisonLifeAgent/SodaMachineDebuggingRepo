@@ -80,7 +80,7 @@ def soda_selection(inventory):
 
     validated_user_selection = (False, None)
 
-    #soda_options = get_unique_can_names(inventory)
+    soda_options = get_unique_can_names(inventory)
     while validated_user_selection[0] == False:
         print("Please choose from the following options:")
         i = 1

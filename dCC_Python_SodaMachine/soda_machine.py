@@ -4,41 +4,28 @@ import user_interface
 
 class SodaMachine:
     def __init__(self):
-        self.register = ()
-        self.inventory = ()
+        self.fill_register()
+        self.fill_inventory()
 
     def fill_register(self):
         """Method will fill SodaMachine's register with certain amounts of each coin when called."""
-        for index in range(8):
-            self.register.append(coins.Quarter())
-        for index in range(10):
-            self.register.append(coins.Dime())
-        for index in range(20):
-            self.register.append(coins.Nickel())
-        for index in range(50):
-            self.register.append(coins.Penny())
+        for index in range(0):
+            self.fill_register(coins.Quarter())
+        for index in range(0):
+            self.fill_register(coins.Dime())
+        for index in range(0):
+            self.fill_register(coins.Nickel())
+        for index in range(0):
+            self.fill_register(coins.Penny())
 
     def fill_inventory(self):
         """Method will fill SodaMachine's cans list with certain amounts of each can when called."""
-        # fill each flavor
-        if self.inventory == ():
-            cans.Cola.quantity = 10
-            self.inventory.append(cans.Cola)
-            print(cans.Cola.quantity)
-
-        #fill orange soda
-            cans.OrangeSoda.quantity = 10
-            self.inventory.append(cans.OrangeSoda)
-            print(cans.OrangeSoda.quantity)
-
-        #fill root beer
-            cans.RootBeer.quantity = 10
-            self.inventory.append(cans.RootBeer)
-            print(cans.RootBeer.quantity)
-
-            #inventory = self.inventory
-
-            #return self.inventory
+        for index in range(0):
+            self.fill_inventory(cans.Cola())
+        for index in range(0):
+            self.fill_inventory(cans.OrangeSoda())
+        for index in range(0):
+            self.fill_inventory(cans.RootBeer())
 
     def begin_transaction(self, customer):
         """Method is complete. Initiates purchase if user decides to proceed. No errors."""
@@ -48,7 +35,7 @@ class SodaMachine:
 
     def run_transaction(self, customer):
 
-        selected_soda_name = user_interface.soda_selection(self.inventory)
+        selected_soda_name = user_interface.soda_selection(self.fill_inventory)
 
         selected_soda = self.get_inventory_soda(selected_soda_name)
 
