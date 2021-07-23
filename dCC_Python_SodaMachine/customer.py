@@ -45,7 +45,7 @@ class Customer:
 
     def add_can_to_backpack(self, dispensed_can):
         """Adds instance of a can into backpack's puchased_cans list. No errors"""
-        self.backpack.purchased_cans.append(dispensed_can)
+        self.backpack.append(dispensed_can)
 
     def check_coins_in_wallet(self):
         """Creates a list of the amount of each coin contained in wallet and passes list to user interface function."""
@@ -83,3 +83,4 @@ class Customer:
             self.wallet.append(coins.Nickel())
         for index in range(5):
             self.wallet.append(coins.Penny())
+
