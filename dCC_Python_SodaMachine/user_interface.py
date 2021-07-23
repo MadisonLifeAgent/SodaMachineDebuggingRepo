@@ -10,7 +10,8 @@ def simulation_main_menu():
         print("\tPress -0- to begin transaction")
         print("\tPress -1- to check wallet for coins")
         print("\tPress -2- to check backpack for cans")
-        print("\tPress -3- to terminate simulation")
+        print("\tPress -3- to fill your wallet")
+        print("\tPress -4- to terminate simulation")
         
         user_input = try_parse_int(input())
 
@@ -25,6 +26,7 @@ def validate_main_menu(user_input):
         1: (True, 1),
         2: (True, 2),
         3: (True, 3),
+        4: (True, 4),
     }
     return switcher.get(user_input, (False, None))
 

@@ -2,7 +2,7 @@
 import user_interface
 from soda_machine import SodaMachine
 from customer import Customer
-
+from wallet import Wallet
 
 class Simulation:
     def __init__(self):
@@ -14,6 +14,7 @@ class Simulation:
 
         soda_machine = SodaMachine()
         customer = Customer()
+        wallet = Wallet()
   
         #start the app
         while self.will_proceed == True:
@@ -25,4 +26,6 @@ class Simulation:
             elif user_option == 2:
                 customer.check_backpack()
             elif user_option == 3:
+                wallet.fill_wallet()
+            elif user_option == 4:
                 self.will_proceed = False
