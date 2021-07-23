@@ -34,7 +34,7 @@ class Customer:
         """Method responsible for retrieving a single coin from wallet's money list"""
         for coin in self.wallet:
             if coin.name == coin.name:
-                self.wallet.money.remove(coin)
+                self.wallet.remove(coin)
                 return coin
         return None
 
