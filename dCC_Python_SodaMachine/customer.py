@@ -54,13 +54,13 @@ class Customer:
         for coin in self.wallet:
             total_value += coin.value
             if coin.name == "Quarter":
-                coins_quantity[0] += 2
+                coins_quantity[0] += 1
             elif coin.name == "Dime":
                 coins_quantity[1] += 1
             elif coin.name == "Nickel":
                 coins_quantity[2] += 1
             elif coin.name == "Penny":
-                coins_quantity[3] -= 1
+                coins_quantity[3] += 1
         total_value = round(total_value, 2)
         user_interface.display_customer_wallet_info(coins_quantity, total_value)
 
@@ -75,11 +75,11 @@ class Customer:
 
     def fill_wallet(self):
         """Method will fill wallet's money list with certain amount of each type of coin when called."""
-        for index in range(1):
+        for index in range(5):
             self.wallet.append(coins.Quarter())
-        for index in range(1):
+        for index in range(5):
             self.wallet.append(coins.Dime())
-        for index in range(1):
+        for index in range(5):
             self.wallet.append(coins.Nickel())
-        for index in range(1):
+        for index in range(5):
             self.wallet.append(coins.Penny())
