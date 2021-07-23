@@ -60,7 +60,7 @@ class Customer:
             elif coin.name == "Nickel":
                 coins_quantity[2] += 1
             elif coin.name == "Penny":
-                coins_quantity[3] -= 1
+                coins_quantity[3] += 1
         total_value = round(total_value, 2)
         user_interface.display_customer_wallet_info(coins_quantity, total_value)
 
