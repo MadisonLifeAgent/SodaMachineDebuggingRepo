@@ -1,7 +1,7 @@
 # import classes for use
 import user_interface
-import soda_machine
-import customer
+from soda_machine import SodaMachine
+from customer import Customer
 
 
 class Simulation:
@@ -11,6 +11,9 @@ class Simulation:
 
     def run_simulation(self):
         """The central method called in main.py."""
+
+        soda_machine = SodaMachine()
+        customer = Customer()
   
         #start the app
         while self.will_proceed == True:
