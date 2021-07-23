@@ -34,7 +34,7 @@ class Customer:
         """Method responsible for retrieving a single coin from wallet's money list"""
         for coin in self.wallet:
             if coin.name == coin.name:
-                self.wallet.money.remove(coin)
+                self.wallet.remove(coin)
                 return coin
         return None
 
@@ -54,7 +54,7 @@ class Customer:
         for coin in self.wallet:
             total_value += coin.value
             if coin.name == "Quarter":
-                coins_quantity[0] += 2
+                coins_quantity[0] += 1
             elif coin.name == "Dime":
                 coins_quantity[1] += 1
             elif coin.name == "Nickel":
@@ -75,11 +75,11 @@ class Customer:
 
     def fill_wallet(self):
         """Method will fill wallet's money list with certain amount of each type of coin when called."""
-        for index in range(1):
+        for index in range(5):
             self.wallet.append(coins.Quarter())
-        for index in range(1):
+        for index in range(5):
             self.wallet.append(coins.Dime())
-        for index in range(1):
+        for index in range(5):
             self.wallet.append(coins.Nickel())
-        for index in range(1):
+        for index in range(5):
             self.wallet.append(coins.Penny())
