@@ -33,7 +33,7 @@ class Customer:
     def get_wallet_coin(self, coin_name):
         """Method responsible for retrieving a single coin from wallet's money list"""
         for coin in self.wallet:
-            if coin.name == coin.name:
+            if coin.name == coin_name:
                 self.wallet.remove(coin)
                 return coin
         return None
