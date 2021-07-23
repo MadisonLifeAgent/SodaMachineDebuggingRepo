@@ -1,5 +1,7 @@
 # import classes for use
 import user_interface
+from wallet import Wallet
+import coins
 
 class Customer:
     def __init__(self):
@@ -69,3 +71,15 @@ class Customer:
         else:
             for can in self.backpack.purchased_cans:
                 user_interface.output_text(can.name)
+
+
+    def fill_wallet(self):
+        """Method will fill wallet's money list with certain amount of each type of coin when called."""
+        for index in range(8):
+            self.money.append(coins.Quarter())
+        for index in range(10):
+            self.money.append(coins.Dime())
+        for index in range(20):
+            self.money.append(coins.Nickel())
+        for index in range(50):
+            self.money.append(coins.Penny())
