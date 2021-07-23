@@ -55,8 +55,8 @@ class SodaMachine:
             change_value = self.determine_change_value(total_payment_value, selected_soda.price)
             customer_change = self.gather_change_from_register(change_value)
             if customer_change is None:
-                user_interface.output_text(f'Dispensing ${total_payment_value} back to customer')
-                customer.add_coins_to_wallet(customer_payment)
+                user_interface.output_text(f'Dispensing ${change_value} back to customer')
+                customer.add_coins_to_wallet(customer_change)
                 self.return_inventory(selected_soda)
             else:
                 self.deposit_coins_into_register(customer_payment)
@@ -100,7 +100,7 @@ class SodaMachine:
     def get_coin_from_register(self, coin_name):
         """Removes and returns a coin from register"""
         for coin in self.register:
-            if coin.name == "coin_name":
+            if coin.name == coin_name:
                 self.register.remove(coin)
                 return coin
         return None
@@ -108,7 +108,7 @@ class SodaMachine:
     def register_has_coin(self, coin_name):
         """Searches register for a type of coin, returns True if coin is found"""
         for coin in self.register:
-            if coin.name == "coin_name":
+            if coin.name == coin_name:
                 return True
         return False
 

@@ -41,7 +41,7 @@ class Customer:
     def add_coins_to_wallet(self, coins_list):
         """Method responsible for adding coins from a list into wallet's money list"""
         for coin in coins_list:
-            self.wallet.money.append(coins_list)
+            self.wallet.append(coin)
 
     def add_can_to_backpack(self, dispensed_can):
         """Adds instance of a can into backpack's puchased_cans list. No errors"""
@@ -52,7 +52,7 @@ class Customer:
         total_value = 0
         coins_quantity = [0, 0, 0, 0]
         for coin in self.wallet:
-            total_value += coin.value
+            total_value += 1 * coin.value
             if coin.name == "Quarter":
                 coins_quantity[0] += 1
             elif coin.name == "Dime":
@@ -69,7 +69,7 @@ class Customer:
         if len(self.backpack) <= 0:
             user_interface.output_text("You have no cans in your backpack")
         else:
-            for can in self.backpack.purchased_cans:
+            for can in self.backpack:
                 user_interface.output_text(can.name)
 
 
