@@ -45,13 +45,13 @@ class SodaMachine:
 
         customer_payment = customer.gather_coins_from_wallet(selected_soda)
 
-        self.calculate_transaction(customer_payment, customer)
+        self.calculate_transaction(customer_payment, selected_soda, customer)
 
         user_interface.output_text("Transaction complete")
 
     def calculate_transaction(self, customer_payment, selected_soda, customer):
-        total_payment_value = self.calculate_coin_value(customer_payment, customer)
-        if total_payment_value < selected_soda.price:
+        total_payment_value = self.calculate_coin_value(customer_payment)
+        if total_payment_value > selected_soda.price:
             change_value = self.determine_change_value(total_payment_value, selected_soda.price)
             customer_change = self.gather_change_from_register(change_value)
             if customer_change is None:
@@ -118,9 +118,11 @@ class SodaMachine:
 
     def calculate_coin_value(self, total_value):
         """Takes in a list of coins, returns the monetary value of list."""
+        new_total_value = 0
+
         for coin in total_value:
-            total_value += coin.value
-        return round(total_value, 2)
+            new_total_value += 1 * coin.value
+        return round(new_total_value, 2)
 
     def get_inventory_soda(self, selected_soda_name):
         """Returns the first instance of a can whose name matches the selected_soda_name parameter"""
